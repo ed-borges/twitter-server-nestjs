@@ -45,28 +45,18 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Endponits
+## Requisitos da Aplicação
 
 - A aplicação deve contemplar as seguintes funcionalidades:
-* Registro de usuário usando nick único e senha
-* Login de usuário (Com sessão de usuário da forma que achar melhor)
-* Feed
-* Tweet (Criação / remoção)
-* Like / deslike
-* Retweet Diferencial
+1 Registro de usuário usando nick único e senha
+2 Login de usuário (Com sessão de usuário da forma que achar melhor)
+3 Feed
+4 Tweet (Criação / remoção)
+5 Like / deslike
+6 Retweet Diferencial
+...
+## Endponits
 
 ## autenticação
 
