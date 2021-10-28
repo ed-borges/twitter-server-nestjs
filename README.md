@@ -58,15 +58,37 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Endponits
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- A aplicação deve contemplar as seguintes funcionalidades:
+* Registro de usuário usando nick único e senha
+* Login de usuário (Com sessão de usuário da forma que achar melhor)
+* Feed
+* Tweet (Criação / remoção)
+* Like / deslike
+* Retweet Diferencial
 
-## Stay in touch
+## autenticação
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- login - [localhost:3000/auth/login POST]
+- registrar - [localhost:3000/users POST]
+
+## tweet(posts)
+
+- feed - [localhost:3000/post  GET]
+- tweet [localhost:3000/post  POST]
+- remover tweet [localhost:3000/post/{tweetId}  DELETE]
+- comentar - [localhost:3000/post/{tweetId}/comments POST]
+- like/deslike - [localhost:3000/post/{tweetId}/like GET]
+- Retweet - [localhost:3000/post/{tweetId}/retweet GET]
+
+##outros
+- listar comentarios - [localhost:3000/post/{tweetId}/comments POST]
+- listar todos usuarios - [localhost:3000/users GET]
+
+## Autenticação
+
+Autenticação foi feita com JWT
 
 ## License
 
