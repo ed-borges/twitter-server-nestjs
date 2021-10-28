@@ -3,6 +3,7 @@ import { UserRepository } from './user.repository';
 import { CreateUserDto, UserDto } from './dto/user.dto';
 import { User } from './user.entity';
 import { toUserDto } from './helpers/converter';
+import * as bcrypt from 'bcrypt';
 // export type User = any;
 @Injectable()
 export class UsersService {
@@ -23,6 +24,7 @@ export class UsersService {
 
   async add(userDto: CreateUserDto) {
     const { username, password, email } = userDto;
+    const criptPawword = bcrypt.hashSync(password, 8);
 
     const userInDb = await this.db.findOne({
       where: { username },
@@ -32,7 +34,11 @@ export class UsersService {
       throw new HttpException('User already exists', HttpStatus.BAD_REQUEST);
     }
 
-    const user: User = await this.db.create({ username, email, password });
+    const user: User = await this.db.create({
+      username,
+      email,
+      password: criptPawword,
+    });
     // console.log('salvar');
     await this.db.save(user);
     // console.log('aqui');

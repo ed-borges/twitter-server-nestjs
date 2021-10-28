@@ -6,9 +6,11 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   OneToMany,
+  BeforeInsert,
 } from 'typeorm';
 import { Comment } from '../entity/comment.entity';
 import { Retweet } from 'src/entity/retweet.entity';
+
 
 @Entity('user')
 export class User {
@@ -35,6 +37,11 @@ export class User {
 
   @OneToMany(() => Retweet, (retweet) => retweet.user)
   retweets: Retweet[];
+
+  // @BeforeInsert()
+  // async hashPassword() {
+  //   this.password = await bcrypt.hash(this.password, 10);
+  // }
 
   //   @CreateDateColumn({ type: 'timestamp' })
   //   criacao_at: Date;
